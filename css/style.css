@@ -53,7 +53,7 @@ body {
 }
 
 .heading_container h2 span {
-  color: #7335b7;
+  color: #17012fe3;
 }
 
 .heading_container.heading_center {
@@ -92,7 +92,7 @@ a:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #7335b7;
+  background-color: #17022ef0;
   border-radius: 0 0 350px 0;
 }
 

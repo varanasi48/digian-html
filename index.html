@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <script>
-    fetch('http://api.coinlayer.com/live ? access_key = 9f376028ce3fafe623135a301db601f1&symbols=BTC,ETH')
-.then((response) => {
-    let data = response.json(); // Let supposed  the data is in this format [{ id: 1 }, { id: 2 }, { id: 3 }]
-    let tr = '';
-    let tableBody = document.querySelector('#table_id');
-    data.forEach(function(value) {
-        let tr = document.createElement('tr');
-        tr.textContent = data.id
-        tableBody.appendChild(tr);
-    });
+    $.ajax({
+        contentType: "application/json",
+        type: "GET",
+        url: "https://localhost:44397/api/Values/Details/" + id,
+        success: function (data) {
+            alert('Welcome!');
+           // res = data;
+           console.log(data)
+                    var items = '';  
+                    $.each(data, function (i, item) {  
+                        var rows = "<tr>"  
+                        + "<td class='yourTableTh'>" + item.YourProperty + "</td>"  
+                        + "<td class='yourTableTh'>" + item.YourProperty2 + "</td>"  
+                        + "<td class='yourTableTh'>" + item.YourProperty3 + "</td>"  
+                        + "</tr>";  
+                        $('#YourTableId tbody').append(rows);  
+                    });  
 
-}).catch(error => {
-    console.log(error);
-});
-  </script>
+           // window.location.href = "/Home/Details/" + data.id;
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            $("#postResult").val(jqXHR.statusText);
+        }
+    });
+</script>
+<style>
+  table, th, td {
+    border:1px solid black;
+  }
+  </style>
 
 <head>
   <!-- Basic -->
@@ -198,11 +213,7 @@
         </div>
     </div>
      
-      <div class="btn-box">
-        <a href="">
-          View More
-        </a>
-      </div>
+      
     </div>
   </section>
   <!-- end service section -->
@@ -243,18 +254,16 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          Our 
+          Plans
         </h2>
       </div>
       <div class="row">
         <div class="col-md-6">
           <div class="box">
-            <div class="img-box">
-              <img src="images/case-1.jpg" alt="">
-            </div>
+           
             <div class="detail-box">
               <h5>
-                Sit amet consectetur adipisicing elit
+                Plan-A
               </h5>
               <p>
                 Alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
@@ -270,16 +279,20 @@
         </div>
         <div class="col-md-6">
           <div class="box">
-            <div class="img-box">
-              <img src="images/case-2.jpg" alt="">
-            </div>
+           
             <div class="detail-box">
               <h5>
-                Excepturi placeat nihil eos maxime
+                Plan-B
               </h5>
-              <p>
-                Alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-              </p>
+              <table> 
+                
+                <tr>
+                  <tr>
+                    <td>Investment</td>
+                    <td>₹50000-₹1000000</td>
+                  </tr>
+                </tr>
+              </table>
               <a href="">
                 <span>
                   Read More
