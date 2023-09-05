@@ -92,7 +92,7 @@ a:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #17022ef0;
+  background-image: url('../images/homepage.gif');
   border-radius: 0 0 350px 0;
 }
 
