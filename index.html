@@ -1,31 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <script>
-    $.ajax({
-        contentType: "application/json",
-        type: "GET",
-        url: "/login" + id,
-        success: function (data) {
-            alert('Welcome!');
-           // res = data;
-           console.log(data)
-                    var items = '';  
-                    $.each(data, function (i, item) {  
-                        var rows = "<tr>"  
-                        + "<td class='yourTableTh'>" + item.YourProperty + "</td>"  
-                        + "<td class='yourTableTh'>" + item.YourProperty2 + "</td>"  
-                        + "<td class='yourTableTh'>" + item.YourProperty3 + "</td>"  
-                        + "</tr>";  
-                        $('#YourTableId tbody').append(rows);  
-                    });  
-
-           // window.location.href = "/Home/Details/" + data.id;
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            $("#postResult").val(jqXHR.statusText);
-        }
-    });
-</script>
+ 
 
 
 <head>
@@ -87,7 +62,7 @@
               </li>
             </ul>
             <div class="quote_btn-container">
-              <a href="./login/index.html" class="quote_btn">
+              <a href="http://34.226.47.216:3000/#/loginsamp" class="quote_btn">
                Login
               </a>
             </div>

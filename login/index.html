@@ -21,12 +21,12 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 
-<script>
-	
-</script>
+
+
+
+
 </head>
 <body>
 	
@@ -37,7 +37,7 @@
 					<img src="../images/logo-lg.png" alt="IMG">
 				</div>
 
-				<form class="login100-form " name="myForm"   >
+				<form class="login100-form " id="form"  action="http://localhost:3001/login" method="post" >
 					<span class="login100-form-title">
 						Member Login
 					</span>
@@ -59,7 +59,7 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn"  onclick="handleLoginSubmit">
+						<button  type="submit"  class="login100-form-btn"  >
 							Login
 						</button>
 					</div>
